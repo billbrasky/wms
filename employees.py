@@ -6,6 +6,7 @@ class Employee:
         self.name = name
         self.function = function
 
+
 class Picker( Employee ):
     def test( self ):
         print( self.id, self.name, self.function )
@@ -27,6 +28,38 @@ class Picker( Employee ):
     def adminPicker( self ):
 
         self.zones = set( self.trustedPicker + self.southPicker )
+
+
+class MovableUnit():
+    def __init__( self ):
+        self.orderID = None
+
+
+class Order():
+
+
+
+class Cart():
+    def __init__( self, orders ):
+        self.orders = {order.id: order for order in orders}
+
+    def getOrders( self ):
+        return self.orders
+
+    def addOrder( self, order ):
+        if self.orders is None:
+            self.orders = {}
+
+        self.orders[order.id] = order
+
+    
+    def removeOrder( self, order ):
+
+        if self.orders.get( order.id ) is not None:
+            del self.orders[order.id]
+
+    
+
 
 
 
