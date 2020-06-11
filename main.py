@@ -1,6 +1,6 @@
 
 import sys
-import menu
+import gui.stations.qa as gui
 # import importlib
 import tkinter as tk
 from tkinter import ttk
@@ -12,7 +12,7 @@ root = tk.Tk()
 # root.configure( background = '#525252' )
 
 
-app = menu.Application( master = root )
+app = gui.Application( master = root )
 
 app.createLoginPage()
 # app.after( 10000, root.reloadit )
