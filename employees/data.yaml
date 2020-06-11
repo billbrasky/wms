@@ -1,0 +1,32 @@
+# zone levels
+# basic - 60, 61, 63
+# overflow - basic, 550
+# upper - overflow, 551
+# south - 20, 21, 22, 30
+# trusted - 611
+# admin - everything
+## All combinations allowed 
+## except for additions to basic.
+## Basic level is not allowed any additions.
+# YES overflow_trusted - overflow, trusted
+# NO basic_trusted - basic, trusted
+
+employee:
+  name_first: Evariste
+  name_last: Galois
+  role_primary: Picker
+  role_other:
+    - replenishment
+    - packing
+    - qa
+  zone_level: admin # only relevant for pickers
+
+# data required for each station
+stations:
+  qa:
+    userID: gevar
+    password: gevar
+    
+
+
+  
