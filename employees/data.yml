@@ -1,0 +1,11 @@
+employees:
+  - name_first: Evariste
+    name_last: Galois
+    userID: gevar
+    passwor: gevar
+    role_primary: qa
+    role_other:
+      - replenishment
+      - packing
+      - picker
+    zone_level: admin # only relevant for pickers
