@@ -7,7 +7,7 @@ class Application( tk.Frame ):
     def __init__( self, master = None ):
         super().__init__( master )
         self.master = master
-        self.root_contianer = None
+        self.root_container = None
 
     def createFrame( self ):
 
@@ -19,6 +19,8 @@ class Application( tk.Frame ):
         self.root_container.grid()
 
     def loginPage( self ):
+
+        self.createFrame()
 
         self.container = ttk.Frame( self.root_container )
         self.container.grid()
@@ -60,8 +62,8 @@ class Application( tk.Frame ):
     
         
     def login( self ):
-        user = self.login_box.get( 1.0, tk.END )
-        password = self.password.get( 1.0, tk.END )
+        user = self.login_box.get( 1.0, tk.END ).strip()
+        password = self.password.get( 1.0, tk.END ).strip()
 
         # check against database ( hasn't been setup yet )
         # for now, allow if its not blank

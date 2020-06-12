@@ -14,6 +14,6 @@ root = tk.Tk()
 
 app = gui.Application( master = root )
 
-app.createLoginPage()
+app.loginPage()
 # app.after( 10000, root.reloadit )
 app.mainloop()
