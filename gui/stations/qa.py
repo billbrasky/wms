@@ -72,6 +72,27 @@ class Application( tk.Frame ):
             print( f'User, "{user}", does not exist or incorrect password.' )
             return
 
+        else:
+            self.createFrame()
+            self.genericMenu()
+
+    def genericMenu( self ):
+
+        self.container = ttk.Frame( self.root_container )
+        self.container.grid()
+
+        listbox = tk.Listbox( self.container )
+
+        test = ['option A', 'option B', 'option C']
+
+        for option in test:
+            listbox.insert( tk.END, f'{test.index( option )}) {option}' )
+        listbox.grid()
+        
+
+
+
+
 
         
         
