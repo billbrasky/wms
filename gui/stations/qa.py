@@ -2,12 +2,14 @@
 import tkinter as tk
 from tkinter import ttk
 
+
 class Application( tk.Frame ):
 
-    def __init__( self, master = None ):
+    def __init__( self, master = None, options: dict = None ):
         super().__init__( master )
         self.master = master
         self.root_container = None
+        self.options = options
 
     def createFrame( self ):
 
@@ -40,6 +42,7 @@ class Application( tk.Frame ):
         login_text.grid( column = 0, row = 0 )
 
         self.login_box = tk.Text( self.container, font = font, height = text_height, width = text_width )
+        self.login_box.insert( tk.END, 'test' )
         self.login_box.grid( column = 1, row = 0 )
 
         password_text = tk.Text( 
@@ -54,6 +57,7 @@ class Application( tk.Frame ):
         password_text.grid( column = 0, row = 1 )
 
         self.password = tk.Text( self.container, font = font, height = text_height, width = text_width )
+        self.password.insert( tk.END, 'test' )
         self.password.grid( column = 1, row = 1 )
 
         button = ttk.Button( self.container, text = 'Enter', command = self.login )
@@ -83,10 +87,15 @@ class Application( tk.Frame ):
 
         listbox = tk.Listbox( self.container )
 
-        test = ['option A', 'option B', 'option C']
+        employee_class = 'picker'
 
-        for option in test:
-            listbox.insert( tk.END, f'{test.index( option )}) {option}' )
+        index = 0
+        for option in self.options[employee_class]:
+            index += 1
+            listbox.insert( tk.END, f'{index}) {option}' )
+
+
+        
         listbox.grid()
         
 

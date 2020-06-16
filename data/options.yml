@@ -1,0 +1,6 @@
+
+picker:
+  picking:
+    - auto
+    - manual
+    - pickup
